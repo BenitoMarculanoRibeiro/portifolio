@@ -9,12 +9,16 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.sendFile(__dirname+'/html/index.html');
 });
 
 
 app.get('/meusProjetos', (req, res) => {
-  res.send('Meus Projetos');
+  res.sendFile(__dirname+'/html/index.html');
+});
+
+app.get('/sobre', (req, res) => {
+  res.sendFile(__dirname+'/html/sobre.html');
 });
 
 app.listen(PORT, HOST);
