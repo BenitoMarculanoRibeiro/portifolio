@@ -23,7 +23,13 @@
 	"settings": {},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": [
+		"eg2.vscode-npm-script",
+		"fknop.vscode-npm",
+		"herrmannplatz.npm-dependency-links",
+		"christian-kohler.npm-intellisense",
+		"lonefy.vscode-js-css-html-formatter"
+	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
