@@ -5,8 +5,10 @@ const app = express();
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Post = require('./models/Post')
-    // Config
-    // Template Engine
+    // Use Images
+app.use(express.static("imgs"));
+// Config
+// Template Engine
 app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
     // Body Parse
@@ -15,21 +17,24 @@ app.use(bodyParser.json())
     // Conexão com o banco de dados MYSQL
 
 app.get('/', function(req, res) {
-    Post.findAll({ order: [
+    Post.findAll({
+        order: [
             ['id', 'DESC']
-        ] }).then(function(posts) {
+        ]
+    }).then(function(posts) {
         res.render('home', { posts: posts })
     })
 })
 
-app.get('/cad', function(req, res) {
+app.get('/cadastro_post', function(req, res) {
     res.render('formulario')
 })
 
-app.post('/add', function(req, res) {
+app.post('/new_post', function(req, res) {
     Post.create({
         titulo: req.body.titulo,
-        conteudo: req.body.conteudo
+        conteudo: req.body.conteudo,
+        autor: req.body.autor
     }).then(function() {
         res.redirect('/')
             //res.send("Post criado com sucesso")

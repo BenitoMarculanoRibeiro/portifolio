@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('node_projeto', 'root', 'root', {
+    // database: "aEe2LdBimG",user: "aEe2LdBimG",password: "SvfgdVTUw5",{}
+const sequelize = new Sequelize('aEe2LdBimG', 'aEe2LdBimG', 'SvfgdVTUw5', {
     // As vezes o formatador da IDE pode sugerir o host e port como maiusculo, use eles como minusculo
-    host: "db",
-    port: "3306",
+    host: "remotemysql.com",
     dialect: 'mysql'
 })
 sequelize.authenticate().then(function() {

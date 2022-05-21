@@ -5,10 +5,13 @@ const Post = db.sequelize.define('postagens', {
     },
     conteudo: {
         type: db.Sequelize.STRING
+    },
+    autor: {
+        type: db.Sequelize.STRING
     }
 })
 
 // Executar apenas quando criar a tabela
-// Post.sync({ force: true })
+Post.sync({ force: true })
 
 module.exports = Post
